@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    background: #0D1834FF;
+}
+
+.container {
+    width: 500px;
+
+    height: 50px;
+    background: #0D1834FF;
+    margin:0 auto;
+}
+.menu_field {
+    width: 400px;
+    height: 200px;
+    background: #0D1834FF;
+    margin:20px auto;
+
+}
+
+
+.keyboard_up, .keyboard_down {
+    display: flex;
+    #justify-content:space-between;
+    justify-content:center;
+    text-align:center;
+    margin:0 auto;
+    margin-bottom: 5px;
+
+}
+.btn {
+    #width: max-content;
+    width:164px;
+    height:max-content;
+    font-family: "Colibri", sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    margin-top: 5px;
+    #margin-right:10px;
+    text-align:center;
+    padding: 5px;
+    background: #3a4156;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.btn_create {
+    color: #13C550FF;
+    margin-right:10px;
+}
+
+.btn_edit {
+    color: #25CEC7FF;
+}
+
+.btn_delete {
+    color: #DC1919FF;
+}
+
+
+.btn_create:active {
+    color: #13C550FF;
+    box-shadow: 0 5px 14px #13C550FF;
+}
+
+.btn_edit:active {
+    color: #25CEC7FF;
+    box-shadow: 0 5px 14px #25CEC7FF;
+}
+
+.btn_delete:active {
+    color: #DC1919FF;
+    box-shadow: 0 5px 14px #DC1919FF;
+}
+
+/***** Create group *****/
+.menu_field h2 {
+    font-family: "Colibri", sans-serif;
+    color: #13C550FF;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 14px #13C550FF;
+    text-align: center;
+    border-radius: 5px;
+    padding-bottom: 3px;
+
+}
+
+.title_label {
+    font-family: "Colibri", sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-right: 10px;
+}
+
+.form_item {
+    margin-top: 20px;
+}
+.form_item option {
+    width: max-content;
+    padding: 5px;
+    color: gray;
+}
+#field_name, #field_message {
+    width: 230px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.form-control {
+    width: max-content;
+    padding: 5px;
+    /*color: color: rgba(255, 255, 255, 0.8);*/
+}
+
+.button_box {
+    display: flex;
+    justify-content: center;
+}
+.btn-primary {
+    margin-top: 20px;
+    color: #13C550FF;
+}
+.btn-primary:active {
+    box-shadow: 0 5px 14px #13C550FF;
+}

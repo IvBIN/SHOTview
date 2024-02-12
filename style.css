@@ -124,3 +124,20 @@
 .btn-primary:active {
     box-shadow: 0 5px 14px #13C550FF;
 }
+
+/****Список****/
+.selectHead{
+    width: 150px;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.selectBody{
+    display: none;
+    color: rgba(255, 255, 255, 0.8);
+}
+.selectBody.active{
+    display: block;
+}

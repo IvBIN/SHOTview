@@ -16,11 +16,12 @@
         <div class="container">
             <div class="menu_field">
                 <div class="keyboard_up">
-                    <a href="./views/add_groupeS.php" class="btn btn_create">Создать группу</a>
-                    <a href="./views/edit_schedule" class="btn btn_edit">Редактировать группу</a>
+                    <a href="./views/add_groupeS.php" class="btn btn_create">Создать расписание</a>
+                    <a href="./views/edit_schedule" class="btn btn_edit">Редактировать расписание</a>
                 </div>
                 <div class="keyboard_down">
-                    <a href="./views/delete_schedule" class="btn btn_delete">Удалить группу</a>
+                    <a href="./views/delete_schedule" class="btn btn_delete">Удалить расписание</a>
+                    <a href="select.php" class="btn">Список</a>
                 </div>
             </div>
         </div>

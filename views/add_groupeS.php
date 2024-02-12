@@ -1,6 +1,11 @@
 <?php
 /** @var string $error_message - Текст ошибки */
+session_start();
+require '../config/db.php';
+$itemGroup = select('SELECT * FROM groups');
 ?>
+
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -9,25 +14,35 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="../style.css">
+        <script src="../script.js" defer></script>
         <title>Menu</title>
     </head>
     <body>
         <div class="container">
             <div class="menu_field">
-                <h2>Создание группы и расписания</h2>
+                <h2>Создание расписания</h2>
                 <form method="post" name="group_add_form" enctype="multipart/form-data">
                     <div class="groups_add_form">
 
                         <div class="form_item">
-                            <label for="field_title" class="title_label">Наименование группы:</label>
-                            <input type="text"
-                                   name="groups[name]"
-                                   id="field_name"
-                                   class="form-control"
-                                   maxlength="160"
-                                   value="<?= !empty($_POST['groups']['name']) ? $_POST['groups']['name'] : '' ?>"
-                                   placeholder="Введите наименование группы"
-                            >
+                            <label for="field_title" class="title_label">Выбор группы:</label>
+
+                                <div class="selectBody">
+                                    <ul>
+                                        <?php foreach ($itemGroup as $item): ?>
+                                        <li><?php echo $item['name']?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+
+<!--                            <input type="text"-->
+<!--                                   name="groups[name]"-->
+<!--                                   id="field_name"-->
+<!--                                   class="form-control"-->
+<!--                                   maxlength="160"-->
+<!--                                   value="--><?php //= !empty($_POST['groups']['name']) ? $_POST['groups']['name'] : '' ?><!--"-->
+<!--                                   placeholder="Введите наименование группы"-->
+<!--                            >-->
                         </div>
 
                         <div class="form_item">
@@ -61,6 +76,7 @@
                                     id="btnGroupAddForm"
                                     class="btn btn-primary"
                                     value="1"
+                                    disabled
                             >Создать
                             </button>
                         </div>

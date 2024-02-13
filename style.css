@@ -125,18 +125,35 @@
     box-shadow: 0 5px 14px #13C550FF;
 }
 
-/****Список****/
-.selectHead{
-    width: 150px;
-    height: 25px;
+/****Список групп****/
+/*.selectBodyGroup{*/
+/*    display: none;*/
+/*    color: rgba(255, 255, 255, 0.8);*/
+/*    border: 1px solid red;*/
+/*}*/
+
+.selectBodyGroup.active{
+    display: block;
+}
+.groupN, .selectBody li{
+    padding-left: 5px;
+    color: gray;
+}
+
+
+.selectHead, .selectHeadGroup{
+    width: 400px;
+    height: 30px;
     padding: 5px;
-    border: 1px solid;
+    border: 2px solid #3a4156;
     border-radius: 5px;
     color: rgba(255, 255, 255, 0.8);
 }
-.selectBody{
+.selectBody, .selectBodyGroup{
     display: none;
     color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #266e40;
+    border-radius: 5px;
 }
 .selectBody.active{
     display: block;

@@ -4,8 +4,6 @@ session_start();
 require '../config/db.php';
 $itemGroup = select('SELECT * FROM groups');
 ?>
-
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -13,9 +11,9 @@ $itemGroup = select('SELECT * FROM groups');
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Menu</title>
         <link rel="stylesheet" href="../style.css">
         <script src="../script.js" defer></script>
-        <title>Menu</title>
     </head>
     <body>
         <div class="container">
@@ -27,35 +25,44 @@ $itemGroup = select('SELECT * FROM groups');
                         <div class="form_item">
                             <label for="field_title" class="title_label">Выбор группы:</label>
 
-                                <div class="selectBody">
-                                    <ul>
-                                        <?php foreach ($itemGroup as $item): ?>
-                                        <li><?php echo $item['name']?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </div>
+                            <div class="selectHeadGroup">Выберите группу</div>
+                            <div class="selectBodyGroup">
+                                <ul>
+                                    <?php foreach ($itemGroup as $item): ?>
+                                        <li class="groupN"><?php echo $item['name']?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
 
-<!--                            <input type="text"-->
-<!--                                   name="groups[name]"-->
-<!--                                   id="field_name"-->
-<!--                                   class="form-control"-->
-<!--                                   maxlength="160"-->
-<!--                                   value="--><?php //= !empty($_POST['groups']['name']) ? $_POST['groups']['name'] : '' ?><!--"-->
-<!--                                   placeholder="Введите наименование группы"-->
-<!--                            >-->
                         </div>
 
                         <div class="form_item">
                             <label for="field_title" class="title_label">Расписание:</label>
-                            <select name="select[]" size="3" multiple>
-                                <option value="<?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '0' ?>">Понедельник</option>
-                                <option value="<?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '1' ?>">Вторник</option>
-                                <option value="<?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '2' ?>">Среда</option>
-                                <option value="<?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '3' ?>">Четверг</option>
-                                <option value="<?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '4' ?>">Пятница</option>
-                                <option value="<?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '5' ?>">Суббота</option>
-                                <option value="<?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '6' ?>">Воскресенье</option>
-                            </select>
+
+                            <div class="selectHead">Выберите дни</div>
+                            <div class="selectBody">
+                                <ul>
+                                    <li><?= insert('INSERT INTO groups (days_of_week) VALUES (0)')?>Понедельник</li>
+
+                                    <li><?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : 0 ?>Понедельник</li>                                    <li><?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : 0 ?>Понедельник</li>
+                                    <li><?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : 1 ?>Вторник</li>
+                                    <li><?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : 2 ?>Среда</li>
+                                    <li><?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : 3 ?>Четверг</li>
+                                    <li><?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : 4 ?>Пятница</li>
+                                    <li><?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : 5 ?>Суббота</li>
+                                    <li><?= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : 6 ?>Воскресенье</li>
+                                </ul>
+                            </div>
+
+<!--                            <select name="select[]" size="3" multiple>-->
+<!--                                <option value="--><?php //= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '0' ?><!--">Понедельник</option>-->
+<!--                                <option value="--><?php //= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '1' ?><!--">Вторник</option>-->
+<!--                                <option value="--><?php //= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '2' ?><!--">Среда</option>-->
+<!--                                <option value="--><?php //= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '3' ?><!--">Четверг</option>-->
+<!--                                <option value="--><?php //= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '4' ?><!--">Пятница</option>-->
+<!--                                <option value="--><?php //= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '5' ?><!--">Суббота</option>-->
+<!--                                <option value="--><?php //= !empty($_POST['groups']['days_of_week']) ? $_POST['groups']['days_of_week'] : '6' ?><!--">Воскресенье</option>-->
+<!--                            </select>-->
                         </div>
 
                         <div class="form_item">

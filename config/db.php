@@ -3,15 +3,15 @@
 //    'provider' => 'pgsql',
 //    'hostname' => '194.190.152.134',
 //    'database' => 'shot',
-//    'username' => 'shot',
+//    'username' => 'potok8',
 //    'password' => 'potok8'
 //];
 
 const DB_PROVIDER = 'pgsql';
 const DB_HOST = '194.190.152.134';
 const DB_BASENAME = 'shot';
-const DB_USERNAME = 'shot';
-const DB_PASSWORD = 'shot';
+const DB_USERNAME = 'potok8';
+const DB_PASSWORD = 'potok8';
 
 function db_connect(){
     $pdo = new PDO(

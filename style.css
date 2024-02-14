@@ -158,3 +158,8 @@
 .selectBody.active{
     display: block;
 }
+.input_day{
+    /*display: none;*/
+    color: rgba(255, 255, 255, 0.8);
+
+}

@@ -1,11 +1,15 @@
 "use strict";
 const head = document.querySelector(".selectHead"),
     body = document.querySelector(".selectBody"),
-    lists = document.querySelectorAll("li");
+    lists = document.querySelectorAll(".dayW"),
+    input = document.querySelector(".input_day");
+
 
 const headG = document.querySelector(".selectHeadGroup"),
     bodyG = document.querySelector(".selectBodyGroup"),
-    listsG = document.querySelectorAll(".groupN");
+    listsG = document.querySelectorAll(".groupN"),
+    inputG = document.querySelector(".input_group");
+
 
 console.log(listsG);
 head.addEventListener("click", ()=> {
@@ -25,14 +29,16 @@ headG.addEventListener("click", ()=> {
 });
 
 
-lists.forEach((li) => {
-    li.addEventListener("click", () => {
+lists.forEach((dayW) => {
+    dayW.addEventListener("click", () => {
         if (head.textContent === "Выберите дни"){
-            head.textContent = li.textContent;
+            head.textContent = dayW.textContent;
+            input.value = dayW.textContent;
         } else {
-            head.textContent += ", " + li.textContent;
+            head.textContent += ", " + dayW.textContent;
+            input.value += ", " + dayW.textContent;
         }
-        li.remove();
+        dayW.remove();
 
         console.log(head);
     });
@@ -42,8 +48,10 @@ listsG.forEach((groupN) => {
     groupN.addEventListener("click", () => {
         if (headG.textContent === "Выберите группу"){
             headG.textContent = groupN.textContent;
+            inputG.value = groupN.textContent;
         } else {
             headG.textContent += ", " + groupN.textContent;
+            inputG.value += ", " + groupN.textContent;
         }
         groupN.remove();
 

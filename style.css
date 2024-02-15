@@ -8,23 +8,20 @@
 
 .container {
     width: 500px;
-
     height: 50px;
     background: #0D1834FF;
     margin:0 auto;
 }
 .menu_field {
     width: 400px;
-    height: 200px;
+    height: 100px;
     background: #0D1834FF;
     margin:20px auto;
 
 }
 
-
 .keyboard_up, .keyboard_down {
     display: flex;
-    #justify-content:space-between;
     justify-content:center;
     text-align:center;
     margin:0 auto;
@@ -32,14 +29,12 @@
 
 }
 .btn {
-    #width: max-content;
     width:164px;
     height:max-content;
     font-family: "Colibri", sans-serif;
     font-size: 12px;
     text-decoration: none;
     margin-top: 5px;
-    #margin-right:10px;
     text-align:center;
     padding: 5px;
     background: #3a4156;
@@ -57,7 +52,7 @@
 }
 
 .btn_delete {
-    color: #DC1919FF;
+    color: #e04830;
 }
 
 
@@ -72,12 +67,71 @@
 }
 
 .btn_delete:active {
-    color: #DC1919FF;
-    box-shadow: 0 5px 14px #DC1919FF;
+    color: #e04830;
+    box-shadow: 0 5px 14px #e04830;
 }
 
-/***** Create group *****/
-.menu_field h2 {
+/****** Current schedule *******/
+.current_schedule {
+    width: 400px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px #182a69;
+    /*box-shadow: 0 10px 10px #2a489b;*/
+
+
+}
+
+.title_c_schedule{
+    display: flex;
+    justify-content: center;
+    color: rgba(182, 176, 182, 0.51);
+    margin-bottom: 20px;
+    font-family: "Colibri", sans-serif;
+    font-size: 16px;
+}
+.current_data {
+    display: flex;
+    /*justify-content: center;*/
+    justify-content: space-between;
+    gap: 5px;
+    /*border: 1px solid #68A59369;*/
+}
+.name_group_cur, .days_group_cur, .message_group_cur {
+    padding: 5px;
+    /*border: 1px solid green;*/
+
+}
+
+.group_c_schedule{
+    padding-left: 10px;
+    padding-right: 5px;
+    height: max-content;
+    color: rgba(182, 176, 182, 0.51);
+    /*border: 1px solid red;*/
+    text-decoration: none;
+    margin-bottom: 3px;
+    background: #182a69;
+    list-style: none;
+
+}
+.title_gc {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    /*text-align: center;*/
+    color: rgba(231, 226, 231, 0.51);
+    /*border: 1px solid #806600;*/
+
+}
+
+
+
+
+
+/***** Create schedule *****/
+.menu_add {
     font-family: "Colibri", sans-serif;
     color: #13C550FF;
     margin-bottom: 20px;
@@ -87,6 +141,7 @@
     padding-bottom: 3px;
 
 }
+
 
 .title_label {
     font-family: "Colibri", sans-serif;
@@ -98,11 +153,11 @@
 .form_item {
     margin-top: 20px;
 }
-.form_item option {
-    width: max-content;
-    padding: 5px;
-    color: gray;
-}
+/*.form_item option {*/
+/*    width: max-content;*/
+/*    padding: 5px;*/
+/*    color: gray;*/
+/*}*/
 #field_name, #field_message {
     width: 230px;
     color: rgba(255, 255, 255, 0.8);
@@ -151,6 +206,7 @@
 }
 .selectBody, .selectBodyGroup{
     display: none;
+    width: 166px;
     color: rgba(255, 255, 255, 0.8);
     border: 1px solid #266e40;
     border-radius: 5px;
@@ -158,8 +214,92 @@
 .selectBody.active{
     display: block;
 }
-.input_day{
-    /*display: none;*/
-    color: rgba(255, 255, 255, 0.8);
+.input_day, .input_group {
+    display: none;
+    /*color: rgba(255, 255, 255, 0.8);*/
+    color: #25CEC7FF;
+
+}
+
+/***** Edit schedule *****/
+
+.menu_edit{
+    font-family: "Colibri", sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    padding-bottom: 3px;
+    color: #25CEC7FF;
+    box-shadow: 0 5px 14px #25CEC7FF;
+}
+/*.schedule_pre{*/
+/*    width: 400px;*/
+/*    !*height: 30px;*!*/
+/*    height: max-content;*/
+/*    padding: 5px;*/
+/*    border: 2px solid #3a4156;*/
+/*    border-radius: 5px;*/
+/*    color: rgba(255, 255, 255, 0.8);*/
+/*}*/
+
+
+.btn_edit_S{
+    color: #25CEC7FF;
+}
+.btn_edit_S:active{
+    color: #25CEC7FF;
+    box-shadow: 0 5px 14px #25CEC7FF;
+}
+
+/*.edit_window{*/
+/*    height: max-content;*/
+/*    background: gray;*/
+/*    border: 1px solid #25CEC7FF;*/
+/*}*/
+
+
+/***** Delete schedule *****/
+.menu_delete{
+    font-family: "Colibri", sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    padding-bottom: 3px;
+    /*color: #DC1919FF;*/
+    color: #e04830;
+    /*box-shadow: 0 5px 14px #DC1919FF;*/
+    box-shadow: 0 5px 14px #E04830FF;
+}
+.btn_delete_S{
+    color: #e04830;
+}
+.btn_delete_S:active{
+    color: #e04830;
+    box-shadow: 0 5px 14px #e04830;
+}
+
+
+/****** Converter of days (for delete later) *******/
+.convert_field {
+    display: flex;
+    justify-content: center;
+}
+.converter {
+    /*margin: 0 auto;*/
+    width:164px;
+    height:max-content;
+    font-family: "Colibri", sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    /*margin-top: 5px;*/
+    text-align:center;
+    padding: 5px;
+    background: #3a4156;
+    border-radius: 5px;
+
+    color: #c5ad13;
+
+
+
 
 }

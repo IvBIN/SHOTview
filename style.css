@@ -298,8 +298,10 @@
     border-radius: 5px;
 
     color: #c5ad13;
+}
 
 
-
-
+tr, td, th{
+    border: 1px solid #fff;
+    color: #fff
 }

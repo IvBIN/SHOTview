@@ -10,8 +10,6 @@ const headG = document.querySelector(".selectHeadGroup"),
     listsG = document.querySelectorAll(".groupN"),
     inputG = document.querySelector(".input_group");
 
-// const headPre = document.
-
 console.log(listsG);
 head.addEventListener("click", ()=> {
     if (body.classList.contains("active")) {
@@ -40,8 +38,6 @@ lists.forEach((dayW) => {
             input.value += ", " + dayW.textContent;
         }
         dayW.remove();
-
-        console.log(head);
     });
 });
 

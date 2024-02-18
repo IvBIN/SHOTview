@@ -3,7 +3,7 @@
 session_start();
 require '../config/db.php';
 $itemGroup = select('SELECT * FROM groups');
-//$schedPre = select('SELECT days_of_week FROM groups WHERE name = :name');
+require '../php/current_grS.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,7 +12,7 @@ $itemGroup = select('SELECT * FROM groups');
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit scheduler</title>
+    <title>Edit schedule</title>
     <link rel="stylesheet" href="../style.css">
     <script src="../script.js" defer></script>
 </head>
@@ -40,16 +40,6 @@ $itemGroup = select('SELECT * FROM groups');
 
                 <div class="form_item">
                     <label for="field_title" class="title_label">Расписание:</label>
-
-<!--                    <div class="schedule_pre">-->
-<!--                        --><?php
-//                        $nameG = $_POST["group"];
-//                        var_dump($nameG);
-////                        $schedPre = select("SELECT days_of_week, message  FROM groups WHERE name = :name",['nameG'=> $nameG]);
-//
-//                         ?>
-<!---->
-<!--                    </div>-->
 
                     <div class="selectHead">Выберите дни</div>
                     <input type="text" name="day_of_w" class="input_day" value="">
@@ -93,7 +83,27 @@ $itemGroup = select('SELECT * FROM groups');
 
         </form>
 
-<!--        <iframe src="../php/edit_grS.php"  name="edit_schedule"  width="500" height="200" frameborder="0"></iframe>-->
+        <div class="current_schedule">
+            <span class="title_c_schedule">Текущее расписание</span>
+            <div class="current_data">
+                <table class="table_data">
+                    <tr class="table_title">
+                        <th>Группа</th>
+                        <th>Дни недели</th>
+                        <th>Сообщения</th>
+                    </tr>
+                    <?php foreach ($itemGroup as $key=>$item) : ?>
+                        <tr class="table_cell">
+                            <td><?= $item['name'] ?></td>
+                            <td><?=!empty($finalyDaysGroup[$key]) ? implode(", ", $finalyDaysGroup[$key]) : "" ?></td>
+                            <td><?= $item['message'] ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+
+            </div>
+        </div>
+
 
     </div>
 </div>

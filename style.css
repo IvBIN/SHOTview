@@ -13,7 +13,7 @@
     margin:0 auto;
 }
 .menu_field {
-    width: 400px;
+    width: 500px;
     height: 100px;
     background: #0D1834FF;
     margin:20px auto;
@@ -24,15 +24,16 @@
     display: flex;
     justify-content:center;
     text-align:center;
+    gap: 10px;
     margin:0 auto;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 
 }
 .btn {
-    width:164px;
+    width:220px;
     height:max-content;
     font-family: "Colibri", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     text-decoration: none;
     margin-top: 5px;
     text-align:center;
@@ -74,12 +75,10 @@
 /****** Current schedule *******/
 .current_schedule {
     width: 400px;
-    margin: 20px auto;
+    margin: 40px auto;
     border-radius: 5px;
     box-shadow: 0 5px 5px #182a69;
     /*box-shadow: 0 10px 10px #2a489b;*/
-
-
 }
 
 .title_c_schedule{
@@ -90,19 +89,6 @@
     font-family: "Colibri", sans-serif;
     font-size: 16px;
 }
-.current_data {
-    display: flex;
-    /*justify-content: center;*/
-    justify-content: space-between;
-    gap: 5px;
-    /*border: 1px solid #68A59369;*/
-}
-.name_group_cur, .days_group_cur, .message_group_cur {
-    padding: 5px;
-    /*border: 1px solid green;*/
-
-}
-
 .group_c_schedule{
     padding-left: 10px;
     padding-right: 5px;
@@ -113,22 +99,42 @@
     margin-bottom: 3px;
     background: #182a69;
     list-style: none;
-
 }
-.title_gc {
+/*.title_gc {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    margin-bottom: 10px;*/
+/*    padding: 5px;*/
+/*    color: rgba(231, 226, 231, 0.51);*/
+/*}*/
+.current_data {
+    width: 98%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
-    padding: 5px;
-    /*text-align: center;*/
-    color: rgba(231, 226, 231, 0.51);
-    /*border: 1px solid #806600;*/
-
+    /*border: 1px solid red;*/
 }
-
-
-
-
+.table_data {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.table_cell, td{
+    padding: 5px;
+    font-family: "Colibri", sans-serif;
+    font-size: 14px;
+    /*border: 1px solid #fff;*/
+    /*color: #fff*/
+    color: rgba(182, 176, 182, 0.51);
+    background: #182a69;
+}
+.table_title, th {
+    padding: 10px;
+    font-family: "Colibri", sans-serif;
+    font-size: 14px;
+    color: rgba(182, 176, 182, 0.51);
+}
 
 /***** Create schedule *****/
 .menu_add {
@@ -139,9 +145,7 @@
     text-align: center;
     border-radius: 5px;
     padding-bottom: 3px;
-
 }
-
 
 .title_label {
     font-family: "Colibri", sans-serif;
@@ -153,11 +157,6 @@
 .form_item {
     margin-top: 20px;
 }
-/*.form_item option {*/
-/*    width: max-content;*/
-/*    padding: 5px;*/
-/*    color: gray;*/
-/*}*/
 #field_name, #field_message {
     width: 230px;
     color: rgba(255, 255, 255, 0.8);
@@ -165,7 +164,6 @@
 .form-control {
     width: max-content;
     padding: 5px;
-    /*color: color: rgba(255, 255, 255, 0.8);*/
 }
 
 .button_box {
@@ -181,12 +179,6 @@
 }
 
 /****Список групп****/
-/*.selectBodyGroup{*/
-/*    display: none;*/
-/*    color: rgba(255, 255, 255, 0.8);*/
-/*    border: 1px solid red;*/
-/*}*/
-
 .selectBodyGroup.active{
     display: block;
 }
@@ -194,8 +186,6 @@
     padding-left: 5px;
     color: gray;
 }
-
-
 .selectHead, .selectHeadGroup{
     width: 400px;
     height: 30px;
@@ -232,17 +222,6 @@
     color: #25CEC7FF;
     box-shadow: 0 5px 14px #25CEC7FF;
 }
-/*.schedule_pre{*/
-/*    width: 400px;*/
-/*    !*height: 30px;*!*/
-/*    height: max-content;*/
-/*    padding: 5px;*/
-/*    border: 2px solid #3a4156;*/
-/*    border-radius: 5px;*/
-/*    color: rgba(255, 255, 255, 0.8);*/
-/*}*/
-
-
 .btn_edit_S{
     color: #25CEC7FF;
 }
@@ -251,13 +230,6 @@
     box-shadow: 0 5px 14px #25CEC7FF;
 }
 
-/*.edit_window{*/
-/*    height: max-content;*/
-/*    background: gray;*/
-/*    border: 1px solid #25CEC7FF;*/
-/*}*/
-
-
 /***** Delete schedule *****/
 .menu_delete{
     font-family: "Colibri", sans-serif;
@@ -265,9 +237,7 @@
     text-align: center;
     border-radius: 5px;
     padding-bottom: 3px;
-    /*color: #DC1919FF;*/
     color: #e04830;
-    /*box-shadow: 0 5px 14px #DC1919FF;*/
     box-shadow: 0 5px 14px #E04830FF;
 }
 .btn_delete_S{
@@ -298,10 +268,4 @@
     border-radius: 5px;
 
     color: #c5ad13;
-}
-
-
-tr, td, th{
-    border: 1px solid #fff;
-    color: #fff
 }
